@@ -10,7 +10,7 @@ function changeMe(arr) {
         object['gender'] = arr[i][2]
         var tahun = Math.abs(2019 - (arr[i][3]))
         object['age'] = tahun
-        if (arr[i][3] == undefined) {
+        if (arr[i][3] == undefined || arr[i][3] > 2019) {
             object['age'] = 'invalid birth year'
         }
         var nama = i + 1 + '. ' + object.firstName + ' ' + object.lastName + ': '
