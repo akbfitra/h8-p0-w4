@@ -2,13 +2,11 @@ function cariMedian(arr) {
     // you can only write your code here!
     if (arr.length % 2 === 0) {
         var nilaiTengah = Math.round(arr.length / 2)
-        console.log(nilaiTengah)
         var nilaiGenap = (arr[nilaiTengah - 1] + arr[nilaiTengah]) / 2
         return nilaiGenap
     }
     if (arr.length % 2 === 1) {
         var nilaiTengah = Math.round(arr.length / 2)
-        console.log(nilaiTengah)
         return arr[nilaiTengah - 1]
     }
 

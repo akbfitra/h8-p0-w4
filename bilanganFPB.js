@@ -24,14 +24,6 @@ function fpb(angka1, angka2) {
         }
     }
 
-
-    var terbesar = out1[0]
-    for (var m = 1; m < out1.length; m++) {
-        if (out1[m] < terbesar) {
-            out1 = out1[m]
-        }
-    }
-
     // return out1
 
     var out = out1[0]
