@@ -1,22 +1,25 @@
-function highestScore(students) {
+function graduates(students) {
     // Code disini
-    var inside = {}
+    var graduates = {}
     for (var i = 0; i < students.length; i++) {
-        if (inside[students[i].class] === undefined) {
-            inside[students[i].class] = {
+        var kelas = students[i].class
+        var nilai = students[i].score
+        if (graduates[kelas] == undefined) {
+            graduates[kelas] = []
+        }
+
+        if (nilai > 75) {
+            var lulus = {
                 name: students[i].name,
                 score: students[i].score
             }
-            if (inside[students[i].score] > students[i].score) {
-                inside.name = students[i].name
-                inside.score = students[i].score
-            }
+            graduates[kelas].push(lulus)
         }
     }
-    return inside
+    return graduates
 }
-// TEST CASE
-console.log(highestScore([{
+
+console.log(graduates([{
         name: 'Dimitri',
         score: 90,
         class: 'foxes'
@@ -39,12 +42,16 @@ console.log(highestScore([{
 ]));
 
 // {
-//   foxes: { name: 'Dimitri', score: 90 },
-//   wolves: { name: 'Alexei', score: 85 }
+//   foxes: [
+//     { name: 'Dimitri', score: 90 }
+//   ],
+//   wolves: [
+//     { name: 'Alexei' , score: 85 },
+//     { name: 'Anastasia', score: 78 }
+//   ]
 // }
 
-
-console.log(highestScore([{
+console.log(graduates([{
         name: 'Alexander',
         score: 100,
         class: 'foxes'
@@ -72,10 +79,17 @@ console.log(highestScore([{
 ]));
 
 // {
-//   foxes: { name: 'Alexander', score: 100 },
-//   wolves: { name: 'Alisa', score: 76 },
-//   tigers: { name: 'Viktor', score: 80 }
+//   foxes: [
+//     { name: 'Alexander', score: 100 },
+//     { name: 'Vladimir', score: 92 }
+//   ],
+//   wolves: [
+//     { name: 'Alisa', score: 76 },
+//   ],
+//   tigers: [
+//     { name: 'Viktor', score: 80 }
+//   ]
 // }
 
 
-console.log(highestScore([])); //{}
+console.log(graduates([])); //{}
