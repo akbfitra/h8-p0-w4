@@ -7,10 +7,11 @@ function highestScore(students) {
                 name: students[i].name,
                 score: students[i].score
             }
-            if (inside[students[i].score] > students[i].score) {
-                inside.name = students[i].name
-                inside.score = students[i].score
-            }
+        }
+
+        if (students[i].score > inside[students[i].class].score) {
+            inside[students[i].class].name = students[i].name
+            inside[students[i].class].score = students[i].score
         }
     }
     return inside
